@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<ScrollPane prefHeight="670.0" prefViewportHeight="600.0" prefViewportWidth="800.0" prefWidth="1000.0" style="-fx-background-color: white;" stylesheets="@bootstrap2.css" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.alfalfa.fx.FileStorageController">
+    <contextMenu>
+        <ContextMenu>
+            <items>
+                <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                <CheckMenuItem mnemonicParsing="false" text="check mi" />
+                <RadioMenuItem mnemonicParsing="false" text="radio mi" />
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <Menu mnemonicParsing="false" text="Unspecified Menu">
+                    <MenuItem mnemonicParsing="false" text="Action 1" />
+                </Menu>
+            </items>
+        </ContextMenu>
+    </contextMenu>
+    <VBox layoutX="250.0" layoutY="-38.0" prefWidth="926.0" spacing="5.0" style="-fx-background-color: #383838;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+        <HBox prefHeight="39.0">
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+         <children>
+            <TextField fx:id="urlInputField" prefHeight="21.0" prefWidth="751.0" promptText="Enter new URL" />
+            <Button fx:id="urlButton" mnemonicParsing="false" onAction="#urlButtonClicked" prefHeight="32.0" prefWidth="122.0" text="Connect to URL">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="primary" />
+               </styleClass>
+            </Button>
+         </children>
+        </HBox>
+        <HBox spacing="5.0">
+         <HBox prefHeight="39.0">
+            <padding>
+               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </padding>
+            <children>
+               <TextField fx:id="fileInputField" prefHeight="21.0" prefWidth="751.0" promptText="Enter File Name" />
+               <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#uploadButtonClicked" prefHeight="32.0" prefWidth="122.0" text="Upload File">
+                  <styleClass>
+                     <String fx:value="btn" />
+                     <String fx:value="success" />
+                  </styleClass>
+               </Button>
+            </children>
+         </HBox>
+        </HBox>
+      <HBox layoutX="15.0" layoutY="15.0" prefHeight="39.0">
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Button fx:id="downloadButton" mnemonicParsing="false" onAction="#downloadButtonClicked" prefHeight="32.0" prefWidth="122.0" text="Download">
+               <styleClass>
+                  <String fx:value="btn" />
+                  <String fx:value="primary" />
+               </styleClass>
+            </Button>
+            <Label fx:id="infoText" contentDisplay="RIGHT" prefHeight="33.0" prefWidth="630.0" text="Info:" />
+            <Button fx:id="deleteButton" contentDisplay="RIGHT" layoutX="15.0" layoutY="15.0" mnemonicParsing="false" onAction="#deleteButtonClicked" prefHeight="32.0" prefWidth="118.0" styleClass="danger" text="Delete" />
+         </children>
+      </HBox>
+        <ScrollPane prefHeight="530.0" prefWidth="918.0">
+            <AnchorPane prefHeight="2000.0" prefWidth="2000.0">
+            <children>
+               <ListView fx:id="GUIlist" prefHeight="522.0" prefWidth="910.0" style="-fx-background-color: #383838;" />
+            </children></AnchorPane>
+        </ScrollPane>
+        <Accordion />
+    </VBox>
+</ScrollPane>
